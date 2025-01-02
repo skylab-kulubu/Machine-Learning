@@ -1,1 +1,1 @@
-# Course 1
+# Denetimli Makine Öğrenimi: Regresyon ve Sınıflandırma
