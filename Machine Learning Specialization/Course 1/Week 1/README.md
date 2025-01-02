@@ -31,16 +31,21 @@ Basit doğrusal regresyon modeli hatırlarsak iki boyutlu uzayda yer alan veri m
 Regresyon çeşitleri: Basit Lineer Regresyon, Çoklu Lineer Regresyon, Ridge Regresyon, Lasso Regresyon, Elastic Net Regresyon, 
 Robust (Dayanıklı) Lineer Regresyon.
 
-Çoklu Lineer Regresyon: Çoklu doğrusal regresyon modeli ise sistemde birden fazla bağımsız değişkenin sonucu etkilediği durumlarda kullanılmaktadır. Aslında kullanımı ve mantığı basit doğrusal regresyon ile benzerdir. Sadece birden fazla değişken işin içinde olduğundan dolayı doğru denklemimiz şu şekilde temsil edilir:
+### Çoklu Lineer Regresyon
+Çoklu doğrusal regresyon modeli ise sistemde birden fazla bağımsız değişkenin sonucu etkilediği durumlarda kullanılmaktadır. Aslında kullanımı ve mantığı basit doğrusal regresyon ile benzerdir. Sadece birden fazla değişken işin içinde olduğundan dolayı doğru denklemimiz şu şekilde temsil edilir:
 y= b0 + ax1 + bx2 + cx3 + d
 
-Ridge Regresyon(L2 regularization): Çok değişkenli regresyon verilerini analiz etmede kullanılır. Amaç hata kareler toplamını minimize eden katsayıları, bu katsayılara bir ceza uygulayarak bulmaktır. Over-fittinge karşı dirençlidir. Çok boyutluluğa çözüm sunar. Tüm değişkenler ile model kurar, ilgisiz değişkenleri çıkarmaz sadece katsayılarını sıfıra yaklaştırır. Modeli kurarken alpha (ceza) için iyi bir değer bulmak gerekir.
+### Ridge Regresyon(L2 regularization)
+Çok değişkenli regresyon verilerini analiz etmede kullanılır. Amaç hata kareler toplamını minimize eden katsayıları, bu katsayılara bir ceza uygulayarak bulmaktır. Over-fittinge karşı dirençlidir. Çok boyutluluğa çözüm sunar. Tüm değişkenler ile model kurar, ilgisiz değişkenleri çıkarmaz sadece katsayılarını sıfıra yaklaştırır. Modeli kurarken alpha (ceza) için iyi bir değer bulmak gerekir.
  
-Lasso Regresyon(L1 regularization): Ürettiği modelin tahmin doğruluğunu ve yorumlanabilirliğini arttırmak için hem değişken seçimi hem de regularization yapar. Aynı ridge regresyonda olduğu gibi amaç hata kareler toplamını minimize eden katsayıları, katsayılara ceza uygularayarak bulmaktır. Fakat ridge regresyondan farklı olarak ilgisiz değişkenlerin katsayılarını sıfıra eşitler.
+### Lasso Regresyon(L1 regularization)
+Ürettiği modelin tahmin doğruluğunu ve yorumlanabilirliğini arttırmak için hem değişken seçimi hem de regularization yapar. Aynı ridge regresyonda olduğu gibi amaç hata kareler toplamını minimize eden katsayıları, katsayılara ceza uygularayarak bulmaktır. Fakat ridge regresyondan farklı olarak ilgisiz değişkenlerin katsayılarını sıfıra eşitler.
  
-Elastic Net Regresyon: Amaç ridge ve lasso regresyon ile aynıdır ama elastic net, ridge ve lasso regresyonu birleştirir. Ridge regresyon tarzı cezalandırma ve lasso regresyon tarzında değişken seçimi yapar.
+### Elastic Net Regresyon
+Amaç ridge ve lasso regresyon ile aynıdır ama elastic net, ridge ve lasso regresyonu birleştirir. Ridge regresyon tarzı cezalandırma ve lasso regresyon tarzında değişken seçimi yapar.
  
-Robust (Dayanıklı) Lineer Regresyon: Uzaktaki(outliers) faktörlerin etkilerini (ağırlıklarını) azaltmak için sağlam tahminciler kullanılır.
+### Robust (Dayanıklı) Lineer Regresyon
+Uzaktaki(outliers) faktörlerin etkilerini (ağırlıklarını) azaltmak için sağlam tahminciler kullanılır.
 
 ## Minimum Kareler Metotu
 Doğrunun ne kadar isabetli olduğunu tespit edebilmek için bir takım yöntemler kullanılır. Bunlardan biri de min-squared error (MSE)’dir. Amacımız bu hatanın olabilecek en düşük değere ulaşmasıdır. Bu fonksiyona aynı zamanda cost function(loss function) denir.
@@ -48,7 +53,7 @@ Doğrunun ne kadar isabetli olduğunu tespit edebilmek için bir takım yönteml
 ## Gradient Descent Algoritması Nedir?
 Kayıp fonksiyonun değerini düşürmek için sistemimizi backward progress denen bir süreçten geçiririz. Bu süreçte amacımız ortaya attığımız lineer regresyon fonksiyonun optimizasyonunu gerçekleştirmektir.
 Buradaki a değişkenimiz öğrenme oranını sembolize etmektedir. Ağırlık fonksiyonun local minimum değerine yaklaşması açısından önem arz eder çünkü local minumum değeri hata fonksiyonun en az olduğu değerdir.
-Gradient descent türleri: Batch, Stochastic, Mini-Batch
+Gradient descent türleri: Batch, Stochastic, Mini-Batch.
 
 ### Batch Gradient Descent
 Gradient tüm veri seti üzerinden hesaplanır. Güncellemeler daha kesin ve kararlıdır.
