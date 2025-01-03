@@ -1,4 +1,4 @@
-# Week 1
+# Makine Öğrenmesine Giriş
 ## Makine Öğrenmesi Nedir?
 Makine öğrenmesi, bilgisayarların, verilerden öğrenmesini ve bu öğrenilen bilgiyi kullanarak belirli görevleri otomatik olarak yerine getirmesini sağlayan bir bilgisayar bilimleri alanıdır.
 
@@ -51,8 +51,60 @@ Uzaktaki(outliers) faktörlerin etkilerini (ağırlıklarını) azaltmak için s
 Doğrunun ne kadar isabetli olduğunu tespit edebilmek için bir takım yöntemler kullanılır. Bunlardan biri de min-squared error (MSE)’dir. Amacımız bu hatanın olabilecek en düşük değere ulaşmasıdır. Bu fonksiyona aynı zamanda cost function(loss function) denir.
  
 ## Gradient Descent Algoritması Nedir?
-Kayıp fonksiyonun değerini düşürmek için sistemimizi backward progress denen bir süreçten geçiririz. Bu süreçte amacımız ortaya attığımız lineer regresyon fonksiyonun optimizasyonunu gerçekleştirmektir.
-Buradaki a değişkenimiz öğrenme oranını sembolize etmektedir. Ağırlık fonksiyonun local minimum değerine yaklaşması açısından önem arz eder çünkü local minumum değeri hata fonksiyonun en az olduğu değerdir.
+Gradient Descent (Gradyan İnişi), lineer regresyon (ve diğer makine öğrenimi algoritmalarının) model parametrelerini (örneğin, ağırlıkları) optimize etmek için kullanılan yaygın bir yöntemdir. Bu, modelin hata fonksiyonunu minimize etmeye (yani en iyi tahminleri yapmaya) çalışan bir optimizasyon algoritmasıdır. Lineer regresyon örneği üzerinden nasıl çalıştığını adım adım açıklayalım:
+
+### 1. Lineer Regresyon Modeli
+
+Lineer regresyon, veri setindeki bağımlı ve bağımsız değişkenler arasındaki ilişkiyi modellemek için kullanılır. Temel formülü şu şekildedir:
+
+y= w*x + b
+
+y: Tahmin edilen değer (bağımlı değişken)
+
+x: Girdi değişkeni (bağımsız değişken)
+
+b: Sabit terim (bias)
+
+w​: Eğim (ağırlık)
+
+### 2. Hata Fonksiyonu (Loss Function)
+
+Modelin doğruluğunu değerlendirmek için bir hata fonksiyonu kullanılır. Lineer regresyonda, en yaygın hata fonksiyonu Mean Squared Error (MSE) yani Ortalama Kare Hata'dır:
+
+MSE = (1/n) * Σ(yᵢ — ŷᵢ)²
+
+yᵢ: Gerçek değer
+
+ŷᵢ: Tahmin edilen değer
+
+n: Veri noktalarının sayısı
+
+MSE, tahmin edilen değerler ile gerçek değerler arasındaki farkları kare alıp ortalama alarak hesaplanır. Amacımız bu hatayı minimize etmektir.
+
+### 3. Gradient Descent Algoritması
+
+Gradient descent, hata fonksiyonunu minimize etmek için parametreleri (ağırlıkları) güncellemek amacıyla kullanılan bir optimizasyon yöntemidir. Temel adımlar şöyle çalışır:
+
+Başlangıç Noktası: Parametreler b ve w​'in rastgele bir başlangıç değeriyle başlar.
+
+Gradyanın Hesaplanması: Hata fonksiyonunun eğimi (gradyanı) hesaplanır. Bu, hata fonksiyonunun parametrelere göre türevini alarak yapılır. 
+
+Lineer regresyon için:
+
+∂MSE/∂w = (2/n) * Σ(-xᵢ) * (yᵢ — ŷᵢ)
+
+∂MSE/∂b = (2/n) * Σ(yᵢ — ŷᵢ)
+
+Parametrelerin Güncellenmesi: Elde edilen gradyanlar kullanılarak parametreler güncellenir. Öğrenme oranı (learning rate) ile adım büyüklüğü belirlenir. Güncelleme formülleri şu şekildedir:
+
+w := w — α * ∂MSE/∂w
+
+b := b — α * ∂MSE/∂b
+
+Burada α öğrenme oranıdır (learning rate). Bu oran, her adımda ne kadar ilerleyeceğimizi belirler.
+
+Yineleme: Bu adımlar, hata fonksiyonu yeterince küçük olana veya belirli bir iterasyon sayısına ulaşılana kadar tekrarlanır.
+
 Gradient descent türleri: Batch, Stochastic, Mini-Batch.
 
 ### Batch Gradient Descent
