@@ -6,6 +6,15 @@
 Regresyon modelleri, değişkenler arasındaki ilişkileri açıklamak için gözlemlenen verilere bir çizgi uydurur. *Çoklu Lineer Regresyon (MLR)*, bir bağımlı değişken ile iki veya daha fazla bağımsız değişken arasındaki ilişkiyi tahmin eder.
 
 ### Amaçlar
-•⁠  ⁠*İlişkileri değerlendirme:* Birden çok bağımsız değişkenin bir bağımlı değişken üzerindeki etkisini analiz etmek (ör. yağış, sıcaklık ve gübrenin mahsul büyümesine etkisi).
-•⁠  ⁠*Tahmin yapma:* Bağımsız değişkenlerin belirli değerlerine dayalı olarak bağımlı değişkenin değerini öngörme (ör. belirli seviyelerdeki yağış, sıcaklık ve gübre kullanımıyla beklenen mahsul verimi).
+İlişkileri değerlendirme: Birden fazla bağımsız değişkenin bir bağımlı değişken üzerindeki etkisini değerlendirir (örneğin, yağış, sıcaklık ve gübrenin bitki büyümesi üzerindeki etkisi).
+
+Tahminler yapma: Bağımsız değişkenlerin belirli değerlerine dayanarak bağımlı değişkenin değerini tahmin eder (örneğin, belirli seviyelerde yağış, sıcaklık ve gübre için beklenen mahsul verimi).
+
+### Uygulama Örneği
+Bir halk sağlığı araştırmacısı, sosyal faktörlerin kalp hastalığı üzerindeki etkisini inceler. 500 kasabadan toplanan veriler:
+Sigara içenlerin yüzdesi (bağımsız değişken 1).
+İşe bisikletle gidenlerin yüzdesi (bağımsız değişken 2).
+Kalp hastalığı olanların yüzdesi (bağımlı değişken).
+Bu iki bağımsız değişken ve bir bağımlı değişkenle, MLR ilişkileri analiz etmek için kullanılabilir.
+
 
