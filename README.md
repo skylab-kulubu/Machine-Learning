@@ -17,7 +17,7 @@ Sigara içenlerin yüzdesi (bağımsız değişken 1).
 Kalp hastalığı olanların yüzdesi (bağımlı değişken).
 Bu iki bağımsız değişken ve bir bağımlı değişkenle, MLR ilişkileri analiz etmek için kullanılabilir.
 
-## Ana Noktalar
+# Ana Noktalar
 
 MLR, bir yanıt değişkenini tahmin etmek için birden fazla açıklayıcı değişken kullanan istatistiksel bir tekniktir.
 
