@@ -25,5 +25,15 @@ Basit doğrusal regresyonu (tek değişken) birden fazla değişkeni kapsayacak 
 
 Uygulamalar: Ekonometrik analizler, finansal tahminler, değişkenler arasındaki ilişkileri açıklama ve teorileri test etme.
 
+### Vektörizasyon
+
+Öğrenme süreçlerindeki verimliliği artırmak için büyük veri gereklidir. Ancak, bu büyük veriyi hızlı bir şekilde işlemek gerekir. Hızlı sonuç elde etmek için vektörizasyon kullanılır.
+
+Vektörizasyon işlemi, aynı veri seti ile yapılan işlemleri hızlandırarak derleme süresini önemli ölçüde kısaltır. Bu teknik, yüksek performans gerektiren bilimsel uygulamalar için işlemcinin bellekteki veri bloklarını tek seferde alıp işleyebilmesini sağlar.
+
+### SIMD Nedir?
+
+SIMD (Single Instruction Multiple Data), tek bir çekirdeğin aynı anda birden fazla işlemi gerçekleştirmesini sağlar. GPU'lar ve CPU'lar, vektör işlemleri için SIMD birimlerini kullanır.
+
 
 
