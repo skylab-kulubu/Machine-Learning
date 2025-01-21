@@ -35,5 +35,9 @@ Vektörizasyon işlemi, aynı veri seti ile yapılan işlemleri hızlandırarak 
 
 SIMD (Single Instruction Multiple Data), tek bir çekirdeğin aynı anda birden fazla işlemi gerçekleştirmesini sağlar. GPU'lar ve CPU'lar, vektör işlemleri için SIMD birimlerini kullanır.
 
+### Gradient Descent ve Vektörizasyon
 
+Gradient Descent (eğim azalma algoritması), büyük veri kümeleri üzerinde model eğitirken önemli bir kavramdır. Çoklu doğrusal regresyon ile birleştirildiğinde daha verimli ve hızlı hesaplamalar sağlar.
+
+Çoklu doğrusal regresyonda, bağımlı değişken (y), birden fazla bağımsız değişken (x) ile doğrusal bir ilişki içinde modellenir.
 
