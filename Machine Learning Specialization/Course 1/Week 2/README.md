@@ -1,4 +1,4 @@
-## Çoklu Dogrusal Regresyon
+# Çoklu Dogrusal Regresyon
 
 # Tanım ve Kullanım
 
