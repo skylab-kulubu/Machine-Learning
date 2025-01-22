@@ -1,35 +1,4 @@
-# Makine Öğrenimi Uzmanlaşma - Hafta 2
-
-Bu doküman, "Machine Learning Specialization" kursunun ikinci haftasında ele alınan kavramları ve teknikleri kapsamaktadır. Amaç, çoklu özelliklerle çalışan lineer regresyon modellerini anlamak, vektörleştirme ile işlem süresini hızlandırmak ve özellik mühendisliği gibi kritik makine öğrenimi tekniklerini uygulamaya almaktır.
-
----
-
-## İçerik
-
-1. [Projenin Amacı](#projenin-amacı)
-2. [Temel Kavramlar](#temel-kavramlar)
-   - [1. Çoklu Özellikler İçin Lineer Regresyon](#1-çoklu-özellikler-için-lineer-regresyon)
-   - [2. Vektörleştirme](#2-vektörleştirme)
-   - [3. Gradient Descent ile Optimizasyon](#3-gradient-descent-ile-optimizasyon)
-   - [4. Özellik Ölçekleme (Feature Scaling)](#4-özellik-ölçekleme-feature-scaling)
-   - [5. Özellik Mühendisliği](#5-özellik-mühendisliği)
-3. [Kullanım Alanları ve Avantajlar](#kullanım-alanları-ve-avantajlar)
-4. [Gereksinimler ve Kurulum](#gereksinimler-ve-kurulum)
-5. [Katkıda Bulunma](#katkıda-bulunma)
-
----
-
-## Projenin Amacı
-
-Bu projede, makine öğrenimi uygulamalarında kritik öneme sahip olan "çoklu lineer regresyon", "vektörleştirme", "özellik ölçekleme" ve "özellik mühendisliği" gibi temel kavramlar derinlemesine incelenmektedir. Amacımız:
-
-- Karmaşık veri setlerindeki özelliklerin önemini anlamak,
-- Modelleri optimize etmek için gradient descent gibi algoritmaları etkin kullanmak,
-- Çözüm süreçlerini hızlandırmak için vektörleştirme tekniklerini uygulamak,
-- Daha doğru tahminler yapmak için yeni özellikler yaratmak ve dönüştürmek.
-
----
-## Coklu Dogrusal Regresyon
+## Çoklu Dogrusal Regresyon
 
 # Tanım ve Kullanım
 
@@ -60,4 +29,27 @@ Bu iki bağımsız değişken ve bir bağımlı değişkenle, MLR ilişkileri an
 - Basit doğrusal regresyonu (tek değişken) birden fazla değişkeni kapsayacak şekilde genişletir.
 
 Uygulamalar: Ekonometrik analizler, finansal tahminler, değişkenler arasındaki ilişkileri açıklama ve teorileri test etme.
+
+# Vektörizasyon
+
+Öğrenme süreçlerindeki verimliliği artırmak için büyük veri gereklidir. Ancak, bu büyük veriyi hızlı bir şekilde işlemek gerekir. Hızlı sonuç elde etmek için vektörizasyon kullanılır.
+
+Vektörizasyon işlemi, aynı veri seti ile yapılan işlemleri hızlandırarak derleme süresini önemli ölçüde kısaltır. Bu teknik, yüksek performans gerektiren bilimsel uygulamalar için işlemcinin bellekteki veri bloklarını tek seferde alıp işleyebilmesini sağlar.
+
+# SIMD Nedir?
+
+SIMD (Single Instruction Multiple Data), tek bir çekirdeğin aynı anda birden fazla işlemi gerçekleştirmesini sağlar. GPU'lar ve CPU'lar, vektör işlemleri için SIMD birimlerini kullanır.
+
+# Gradient Descent ve Vektörizasyon
+
+Gradient Descent (eğim azalma algoritması), büyük veri kümeleri üzerinde model eğitirken önemli bir kavramdır. Çoklu doğrusal regresyon ile birleştirildiğinde daha verimli ve hızlı hesaplamalar sağlar.
+
+Çoklu doğrusal regresyonda, bağımlı değişken (y), birden fazla bağımsız değişken (x) ile doğrusal bir ilişki içinde modellenir.
+
+# Özellik Ölçeklendirme
+
+Özellik ölçeklendirme (Feature Scaling), değişkenler arasındaki ölçüm farklılıklarını ortadan kaldırmayı amaçlar. Amaç, modellerin değişkenlere eşit koşullar altında yaklaşmasını sağlamaktır.
+
+Özellik ölçeklendirme, özellikle Gradient Descent gibi algoritmaların eğitim süresini kısaltır. Ayrıca, KNN, K-Means ve PCA gibi mesafe tabanlı yöntemlerde oluşabilecek yanlılığı önler.
+
 
