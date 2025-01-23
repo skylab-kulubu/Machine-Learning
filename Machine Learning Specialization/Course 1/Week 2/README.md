@@ -83,3 +83,34 @@ Gradient Descent (eğim azalma algoritması), büyük veri kümeleri üzerinde m
 - Tek-Sıcak Kodlama (One-Hot Encoding): Kategorik değişkenler, ikili vektörlere dönüştürülür.
 
 
+# En İyi Araçlar
+
+FeatureTools: Zaman serileri ve ilişkisel veriler için özellik matrisleri oluşturur.
+
+AutoFeat: Otomatik özellik mühendisliği ve seçimi yapar.
+
+TsFresh: Zaman serisi verilerini otomatik olarak işler.
+
+Polinom Regresyonu ve Özellik Mühendisliği
+
+Polinom regresyonu, doğrusal regresyonun üzerine inşa edilerek veri içindeki doğrusal olmayan ilişkileri modellemek için kullanılır.
+
+# Önemli Noktalar
+
+Ölçeklendirme: Büyük veri aralıkları algoritmaları olumsuz etkileyebilir.
+
+Alternatif Özellikler: Karekök, log gibi dönüşümler kullanılabilir.
+
+Scikit-learn Kullanımı: Basit ve verimli model oluşturmayı sağlar.
+
+# Kaynaklar
+
+Multiple Linear Regression
+
+Investopedia
+
+Medium Vektörizasyon
+
+Feature Scaling
+
+
