@@ -203,5 +203,7 @@ Görselde ayrıca "loss" ve "cost" kavramlarına değinilmiş. Basitçe, "loss" 
 
 Sonuç olarak, lineer regresyon hataları azaltmada daha basit ve doğrudan bir yola sahipken, lojistik regresyon daha karmaşık bir yapıda çalışır ve optimizasyonu daha dikkatli bir yaklaşım gerektirir.
 
-![Logistic1](https://imgur.com/a/training-set-UCO3jRg)
+![Logistic1](https://github.com/user-attachments/assets/77fd2b9f-bb5a-4822-a5b0-acadd866051a)
 ![Logistic2](https://global.discourse-cdn.com/dlai/original/3X/c/2/c22ec781fe0d6baf52100555824f82d9537b5e0f.jpeg)
+
+
