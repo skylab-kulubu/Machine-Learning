@@ -52,4 +52,34 @@ Gradient Descent (eğim azalma algoritması), büyük veri kümeleri üzerinde m
 
 Özellik ölçeklendirme, özellikle Gradient Descent gibi algoritmaların eğitim süresini kısaltır. Ayrıca, KNN, K-Means ve PCA gibi mesafe tabanlı yöntemlerde oluşabilecek yanlılığı önler.
 
+# Ölçeklendirme Yöntemleri
+
+- Normalize Etme (Min-Max Ölçeklendirme): Verileri genellikle 0 ile 1 arasına çeker.
+
+- Standartlaştırma (Z-Score Ölçeklendirme): Verileri ortalama sıfır ve standart sapma bir olacak şekilde ayarlar.
+
+# Özellik Mühendisliği
+
+Özellik mühendisliği, ham veriyi denetimli öğrenmeye uygun özelliklere dönüştürme sürecidir. Beş ana süreç içerir:
+
+- Özellik oluşturma
+
+- Dönüştürme
+
+- Özellik çıkarımı
+
+- Keşifsel veri analizi
+
+- Karşılaştırmalı analiz
+
+# Yaygın Teknikler
+
+- Eksik verilerin tamamlanması (Imputation): Eksik veriler ortalama veya medyan gibi değerlerle doldurulur.
+
+- Ayıklamalarla başa çıkma: Aykırı değerlerin kaldırılması veya değiştirilmesi.
+
+- Log Dönüşümü: Eğik dağılımları düzeltmek için log fonksiyonu uygulanır.
+
+- Tek-Sıcak Kodlama (One-Hot Encoding): Kategorik değişkenler, ikili vektörlere dönüştürülür.
+
 
