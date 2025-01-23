@@ -103,14 +103,4 @@ Alternatif Özellikler: Karekök, log gibi dönüşümler kullanılabilir.
 
 Scikit-learn Kullanımı: Basit ve verimli model oluşturmayı sağlar.
 
-# Kaynaklar
-
-Multiple Linear Regression
-
-Investopedia
-
-Medium Vektörizasyon
-
-Feature Scaling
-
 
