@@ -135,3 +135,73 @@ Karar sınırları, makine öğreniminde, özellikle sınıflandırma görevleri
 
   Sinir ağları söz konusu olduğunda, ağın öğrenebileceği karar sınırının türü, gizli katmanların sayısına göre belirlenir. Gizli katmanları yoksa, o zaman sadece doğrusal problemleri öğrenebilir. Gizli bir katmanı varsa, herhangi bir sürekli işlevi öğrenebilir.
   
++ ## Karar sınırlarını bulmak için bazı yaygın yöntemler nelerdir?
+
+Karar sınırlarını bulmak için birkaç yaygın yöntem vardır:
+
+1.	Doğrusal Sınıflandırma — Doğrusal karar sınırları, giriş özelliklerinin doğrusal fonksiyonlarıdır. Bunlar, D boyutlu bir giriş uzayındaki (D-1) boyutlu hiperdüzlemlerdir. Örneğin, bir 3 boyutlu özellikler kümesi 2B karar sınırlarına (düzlemler) sahip olacaktır ve bir dizi 2 boyutlu özellik 1B karar sınırlarına (çizgiler) sahip olacaktır.
+
+2.	Doğrusal Olmayan Sınıflandırma — Doğrusal olmayan karar sınırları, özellik alanını dönüştürerek veya sinir ağları gibi belirli modeller kullanılarak elde edilebilir. Örneğin, gizli katmanlara sahip bir sinir ağı, doğrusal olmayan karar sınırlarını öğrenebilir.
+
+3.	Kernel Trick — Çekirdek hilesi, Destek Vektör Makinelerinde (SVM'ler) doğrusal olmayan karar sınırları oluşturmak için kullanılan bir yöntemdir. Verilerin, karar sınırının doğrusal olabileceği daha yüksek boyutlu bir alana eşlenmesini içerir. Bu süreç, sinir ağlarındaki gizli katmanların doğrusal olmayan karar sınırı problemini nasıl çözdüğüne benzer.
+
+4.	Karar Ağaçları ve Sinir Ağları — Karar sınırları, karar ağaçları ve sinir ağları kullanılarak da oluşturulabilir. Bu yöntemler, doğrusal olarak ayrılamayan verileri işleyebilen karmaşık karar sınırları oluşturabilir.
+
+5.	Lojistik Regresyon — Lojistik regresyon, girdi özelliklerini polinom lojistik regresyon kullanmak gibi belirli bir şekilde işleyerek doğrusal olmayan karar sınırları oluşturabilir.
+
+Yöntem seçimi, modelin karmaşıklığına, özellik kümesine ve eldeki sorunun doğasına bağlıdır. Model karmaşıklığı ile verilerin fazla veya yetersiz sığdırılması riski arasındaki dengeyi göz önünde bulundurmak da önemlidir.
+
++ ## Daha iyi performans için karar sınırları nasıl optimize edilebilir?
+
+Karar sınırlarının optimize edilmesi, makine öğrenimi modellerinin performansını önemli ölçüde artırabilir. Bunu başarmak için bazı stratejiler şunlardır:
+
+1.	Sınır Kalınlığı — Kalın karar sınırları daha iyi performans ve sağlamlığa yol açabilirken, ince karar sınırları aşırı uyuma neden olabilir. Bu nedenle, sınır kalınlığını açıkça artıran öğrenme algoritmaları tasarlamak faydalı olabilir.
+
+2.	Esneklik ve Kesinlik — Karar sınırı, aykırı değerler de dahil olmak üzere verilerin karmaşıklığına uyum sağlayacak kadar esnek olmalıdır. Bununla birlikte, farklı sınıfları doğru bir şekilde ayırmak için yeterince kesin olmalıdır. Aşırı esnek sınırlar verilere tam olarak uymayabilirken, aşırı kesin sınırlar eğitim verilerine gereğinden fazla sığabilir ve yeni verilere iyi bir şekilde genellenmeyebilir.
+
+3.	Sınıf Sınırı Etiketi Belirsizliğinin Azaltılması — Karar sınırı, daha fazla sınır eğitimi örneğini barındıracak şekilde uyarlanabilir ve bu da eğitim doğruluğunu artırabilir. Ancak, bu daha karmaşık bir sınıflandırma modeliyle sonuçlanabilir.
+
+4.	Sınır Yumuşatma — Karar sınırlarının yumuşatılması, aşırı uyumun önlenmesine yardımcı olabilir. Bu, sınır örneklerini ortadan kaldırarak başarılabilir.
+
+5.	En Yakın Komşular — Karar sınırları, bir numunenin ve en yakın komşularının tahmininin ağırlıklı ortalaması yapılarak iyileştirilebilir. Bu yaklaşım, ağ mimarisinde, eğitim prosedüründe veya veri kümesinde herhangi bir değişiklik gerektirmez.
+
+6.	Yanlılık-Varyans Ödünleşimi — Karar sınırının karmaşıklığı, yanlılık-varyans ödünleşimini etkileyebilir. Örneğin, k-en yakın komşularda (kNN) daha küçük k değerleriyle, karar sınırları pürüzlü ve karmaşıktır (yüksek varyans), ancak daha büyük k değerleri için basit ve düzdür (yüksek yanlılık). Bu nedenle, daha iyi performans için yanlılık ve varyans arasında optimal bir denge sağlanmalıdır.
+
+7.	Reddetme Seçeneğine Dayalı Sınıflandırma (ROC) — Bu teknik, çoğu ayrımcılığın, bir modelin tahminden en az emin olduğu zaman, yani karar sınırı çevresinde meydana geldiğini varsayar. Ayrımcılığın azaltılması için bir sınıflandırıcının düşük güven bölgesinden yararlanarak, model tahminlerindeki yanlılık azaltılabilir.
+
+Strateji seçimi, belirli bir soruna ve verilerin doğasına bağlıdır. Nasıl geliştiklerini anlamak ve olası kusurları bulmak için hem eğitim hem de test sırasında karar sınırlarını görselleştirmek ve analiz etmek de önemlidir.
+
++ ## Karar sınırları ile sınıf sınırı etiketi belirsizliği arasındaki ilişki nedir?
+Karar sınırları ve sınıf sınırı etiketi belirsizliği arasındaki ilişki, model karmaşıklığı ile görünmeyen verilere genelleştirme yeteneği arasındaki değiş tokuş etrafında toplanmıştır. Bir sınıflandırma modelinin karar sınırı, daha fazla sınır eğitim örneğini barındıracak şekilde ince ayarlandığında, daha düşük yanlılık nedeniyle eğitim doğruluğunu artırabilir, ancak potansiyel olarak daha yüksek varyans pahasına genellemeye zarar verebilir. Bu ince ayar, model karmaşıklığını artırır ve modelin eğitim verilerinde iyi performans gösterdiği ancak yeni, görünmeyen verilerde kötü performans gösterdiği aşırı öğrenmeye yol açabilir.
+
+Sınıf sınırı etiketi belirsizliği, eğitim verilerinin etiketlerinde belirsizlik veya gürültü olduğunda ortaya çıkar, bu da öznel etiketleme süreçleri veya sınıflar arasındaki doğal örtüşmeler gibi çeşitli faktörlerden kaynaklanabilir. Bir karar sınırı, yanlış etiketlenmiş bir noktayı içerecek şekilde genişletilirse, modeldeki hem yanlılığı hem de varyansı artırabilir.
+
+Sınıf sınırı etiketi belirsizliğinin etkilerini azaltmak için bir yaklaşım, eğitim setinin noktasal etiket belirsizliğini tahmin etmek ve öğrenme sürecini buna göre ayarlamaktır. Bu, belirsiz etiketlere sahip örneklerin, modelin öğrenme sürecinin nesnel işlevi üzerinde daha küçük bir etkiye sahip olduğu anlamına gelir ve bu da hem yanlılığı hem de varyansı azaltmaya yardımcı olabilir. Bu yaklaşım, özellikle bazı etiketlerin diğerlerinden daha az güvenilir olduğunu gösteren kanıtlar olduğunda, tüm eğitim örneklerinin eşit şekilde ele alınmaması gerektiğini kabul eder.
+
+Karar sınırları ve sınıf sınırı etiket belirsizliği arasındaki ilişki, amacın aşırı karmaşık veya etiket gürültüsüne duyarlı olmadan doğru ve genelleştirilebilir bir karar sınırı elde etmek olduğu bir dengeleme eylemidir. Etiket belirsizliğini hesaba katan yöntemler, belirsiz etiketlerin modelin öğrenme süreci üzerindeki etkisini azaltarak karar sınırının sağlamlığını artırmayı amaçlar.
+
++ ##Doğrusal ve doğrusal olmayan karar sınırları arasındaki fark nedir?
+Doğrusal ve doğrusal olmayan karar sınırları arasındaki fark, karmaşıklıklarında ve ayırabilecekleri veri türünde yatmaktadır.
+
+Doğrusal karar sınırı, bir özellik uzayında farklı sınıfları ayıran düz bir çizgi (iki boyutta), bir düzlem (üç boyutta) veya bir hiper düzlemdir (üçten fazla boyutta). Doğrusal karar sınırları, veriler doğrusal olarak ayrılabilir olduğunda kullanılır, yani düz bir çizgi veya düzlem, sınıfları herhangi bir yanlış sınıflandırma olmadan ayırabilir. Doğrusal karar sınırları daha basit ve yorumlanması daha kolaydır, ancak veriler doğrusal olarak ayrılabilir olmadığında iyi performans göstermeyebilir.
+
+Öte yandan, doğrusal olmayan bir karar sınırı, bir özellik uzayındaki farklı sınıfları ayıran bir eğri veya daha karmaşık bir şekil olabilir. Doğrusal olmayan karar sınırları, veriler doğrusal olarak ayrılamadığında, yani düz bir çizgi veya düzlemin yanlış sınıflandırma olmadan sınıfları ayıramayacağı durumlarda kullanılır. Doğrusal olmayan karar sınırları, daha karmaşık veri dağıtımlarını işleyebilir ve veriler doğrusal olarak ayrılabilir olmadığında daha doğru sınıflandırmalara yol açabilir. Ancak, daha karmaşıktırlar ve yorumlanmaları daha zordur.
+
+Sınıflandırıcılar açısından, lojistik regresyon veya doğrusal destek vektör makineleri (SVM'ler) gibi doğrusal sınıflandırıcılar genellikle doğrusal karar sınırları üretirken, sinir ağları veya k-en yakın komşular (KNN) gibi doğrusal olmayan sınıflandırıcılar doğrusal olmayan karar sınırları üretebilir. Örneğin, SVM'lerde, orijinal özellik uzayında doğrusal olmayan görünse bile, verileri karar sınırının doğrusal olabileceği daha yüksek boyutlu bir alana dönüştürmek için çekirdek hilesi adı verilen bir teknik kullanılır.
+
+![Decision Boundry 1](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*8_qfUgM7ASaleuM47FkzcA.png)
+![Decision Boundry 2](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi-zJVRtYF9cFHvOxZhUaYTtVlUM1vXXoPPj0Fmj6ssI03FOpTSEZcBhUJ-dB7TluclAxaawyRXipeyGi_4pgRqVDIbfd_mYjGgBl0hyphenhyphenxkfBuPM7krBJB-dzFK-8zZB665Rj6PCT9gGh_6f/s1600/nonlinearDB.JPG)
+
+## Lojistik Regression Lineer Regression Farkı
+Aşağıda  şekildeki görsel, lineer ve lojistik regresyonun matematiksel farklarını ve neden farklı davrandıklarını açıklıyor. Temelde, her iki yöntem de bir modelin yaptığı tahminlerle gerçek değerler arasındaki hatayı ölçmeye çalışır. Ancak bu ölçüm ve optimizasyon süreçleri farklıdır.
+
+Lineer regresyonda amaç, verilen veriler üzerinden düz bir çizgi çizerek tahmin yapmak. Burada hata, tahmin edilen değerle gerçek değer arasındaki farkın karesiyle hesaplanır. Bu yöntemde hata fonksiyonunun şekli düzgün bir çanak gibidir, yani sadece bir tane en düşük nokta (global minimum) vardır. Bu, "konveks" yapı olarak adlandırılır ve doğru yöntemlerle bu en düşük noktayı bulmak oldukça kolaydır.
+
+Lojistik regresyon ise genelde sınıflandırma problemleri için kullanılır (örneğin, evet/hayır gibi iki seçenek). Tahminler, 0 ile 1 arasında bir olasılık olarak ifade edilir. Bu yöntemde hata fonksiyonu daha karmaşıktır ve birden fazla düşük nokta olabilir (bunlara "lokal minimum" denir). Bu da optimizasyonu, yani hatayı en aza indirmeyi daha zor hale getirebilir.
+
+Görselde ayrıca "loss" ve "cost" kavramlarına değinilmiş. Basitçe, "loss" tek bir veri noktası için yapılan hatayı gösterirken, "cost" tüm veri kümesindeki hataların ortalamasıdır. Yani "loss", bireysel bir sorun, "cost" ise genel tabloyu gösterir.
+
+Sonuç olarak, lineer regresyon hataları azaltmada daha basit ve doğrudan bir yola sahipken, lojistik regresyon daha karmaşık bir yapıda çalışır ve optimizasyonu daha dikkatli bir yaklaşım gerektirir.
+
+![Logistic1](https://imgur.com/a/training-set-UCO3jRg)
+![Logistic2](https://global.discourse-cdn.com/dlai/original/3X/c/2/c22ec781fe0d6baf52100555824f82d9537b5e0f.jpeg)
