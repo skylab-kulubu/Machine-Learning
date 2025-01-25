@@ -44,9 +44,7 @@ Bir model, eğitim veri kümesi (training dataset) kullanarak daha önce görmed
   -**Destek Vektör Makineleri** (SVM): Doğrusal veya doğrusal olmayan bir karar sınırı kullanarak sınıflandırma yapar.
 
   -**Karar Ağaçları:** Veriyi bir dizi kurala göre bölerek sınıflandırır.
-
-  -**Yapay Sinir Ağları:** Daha karmaşık ve doğrusal olmayan sınıflandırma problemleri için güçlüdür.
-
+,0
   -**K-En Yakın Komşu (K-NN):** Yeni bir örneği, en yakın komşularının sınıfına göre sınıflandırır.
 
 + ## İkili Sınıflandırmada Performans Ölçütleri
@@ -386,6 +384,46 @@ Bagging karmaşık temel modeller kullanır ve tahminlerini "düzeltmeye" çalı
 
 ## Düzenlileştirme Nedir?
 Düzenlileştirme, makine öğrenmesi ve derin öğrenme modellerinde aşırı öğrenmeyi önlemek için kullanılan bir tekniktir. Modelin karmaşıklığını kontrol altında tutarak, modelin eğitim verisine aşırı uyum sağlamasını ve genelleme yeteneğinin düşmesini engeller. Düzenlileştirme, modelin parametrelerine ceza ekleyerek gerçekleşir ve bu cezalar modelin daha basit ve genelleyici olmasını sağlar.
+
+## L1 Düzenlileştirme (Lasso)
+L1 düzenlileştirme, modelin bazı parametrelerinin sıfıra yakın olmasını teşvik eder. Bu, parametrelerin mutlak değerlerinin toplamını ceza terimi olarak ekleyerek yapılır. L1 düzenlileştirme, aşağıdaki maliyet fonksiyonuna eklenen bir terimle ifade edilir:
+
+![image](https://github.com/user-attachments/assets/abc4cc43-5097-442d-8ef0-aff33c2d2c87)
+
+Burada:
+- λ, düzenlileştirme parametresidir ve modelin ne kadar cezalandırılacağını belirler.
+- θi, modelin parametreleridir.
+L1 düzenlileştirme, bazı parametrelerin tamamen sıfıra inmesini sağladığı için modelde seçicilik sağlar ve gereksiz parametreleri elimine eder. Bu, özellikle yüksek boyutlu veri setlerinde etkili olabilir.
+
+## L2 Düzenlileştirme (Ridge)
+L2 düzenlileştirme, modelin parametrelerinin büyük olmasını cezalandırır ve tüm parametrelerin küçük olmasını teşvik eder. Bu, parametrelerin karelerinin toplamını ceza terimi olarak ekleyerek yapılır. L2 düzenlileştirme, aşağıdaki maliyet fonksiyonuna eklenen bir terimle ifade edilir:
+
+![image](https://github.com/user-attachments/assets/6fff8a17-1cc9-4453-82ee-00e35c0a445f)
+
+L2 düzenlileştirme, parametrelerin büyüklüğünü sınırlar ve modelin daha düzgün ve genelleyici olmasını sağlar. Bu, özellikle aşırı öğrenmenin önlenmesinde etkili bir yöntemdir.
+
+## L1 ve L2'nin Birleşimi: Elastic Net
+Elastic Net, L1 ve L2 düzenlileştirmenin birleşimidir ve her iki yöntemin avantajlarını bir araya getirir. Elastic Net, aşağıdaki maliyet fonksiyonuna eklenen bir terimle ifade edilir:
+
+![image](https://github.com/user-attachments/assets/4b603395-a6ca-4185-94b4-eebcdddb6a0f)
+
+Elastic Net, hem parametrelerin sıfıra yakın olmasını teşvik eder hem de büyük parametreleri cezalandırır. Bu sayede, model hem daha seçici olur hem de genelleyici yeteneği artırılır.
+
+Düzenlileştirme, derin öğrenme modellerinde aşırı öğrenmeyi önlemek için kritik bir rol oynar. L1, L2, Elastic Net, Dropout ve Batch Normalization gibi teknikler, modelin daha sade, genelleyici ve güvenilir olmasını sağlar. Bu yöntemler, deep learning modellerinin performansını artırarak gerçek dünya uygulamalarında daha başarılı olmalarına katkı sağlar.
+
+Kaynakça
+https://medium.com/@oran.yasemin/d%C3%BCzenlile%C5%9Ftirme-regularization-teknikleri-ile-a%C5%9F%C4%B1r%C4%B1-%C3%B6%C4%9Frenmeyi-%C3%B6nleme-l1-ve-l2-d%C3%BCzenlile%C5%9Ftirme-9afc04e624e3
+https://elitedatascience.com/overfitting-in-machine-learning)
+https://klu.ai
+https://bulutistan.com/blog/
+https://www.veribilimiokulu.com/
+
+
+
+
+
+
+
 
 
 
