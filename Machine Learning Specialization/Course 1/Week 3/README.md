@@ -209,3 +209,26 @@ Sonuç olarak, lineer regresyon hataları azaltmada daha basit ve doğrudan bir 
 
 ## Logistic Loss Function
 
+Lojistik regresyonun bu kayıp fonksiyonu, modelin tahminlerini doğru yöne itmek için tasarlanmıştır. Doğru tahminlerde düşük bir ceza verirken, yanlış tahminlerde ağır bir ceza uygular. Bu yapı, modelin sınıflandırma görevlerinde daha iyi performans göstermesini sağlar. Özellikle yanlış sınıflandırmaların yüksek maliyeti olan durumlarda (örneğin, tıbbi teşhis), bu fonksiyon çok kullanışlıdır.
+
+![image](https://github.com/user-attachments/assets/4a89e805-5877-4819-a495-39c68594960c)
+
+Eğer gerçek etiket y=1y = 1y=1 ise, modelin tahmini ne kadar 1'e yakınsa (yani doğru tahmin yapıyorsa), kayıp o kadar düşük olur. Tahmin tamamen 1 olduğunda kayıp sıfıra yaklaşır. Ancak modelin tahmini 0'a yaklaştıkça kayıp hızla artar.
+
+Eğer gerçek etiket y=0y = 0y=0 ise, modelin tahmini ne kadar 0'a yakınsa, kayıp o kadar düşük olur. Ancak tahmin 1'e yaklaştıkça kayıp artar.
+Logaritmik yapı, bu kayıpları daha hassas bir şekilde ölçmemizi sağlar ve yanlış tahminlerde daha ağır bir ceza uygular. Bu, modelin doğru tahmin yapmaya daha fazla odaklanmasını sağlar.
+
+![image](https://github.com/user-attachments/assets/ac3e1284-d113-42bb-bb2f-bf34aed55cc3)
+
+Bu görselde benzer bilgiler biraz daha detaylı ele alınıyor:
+
+Eğer gerçek değer y=0y = 0y=0 ise ve modelin tahmini fff 0'a yakınsa, kayıp düşüktür. Ancak tahmin 1'e yaklaştığında kayıp hızla artar ve teorik olarak sonsuza gidebilir. Örneğin, model bir veriyi yanlışlıkla "1" (örneğin, kanser var) olarak tahmin ederse, bu ciddi bir hata olur ve kayıp çok büyük olur.
+Eğer gerçek değer y=1y = 1y=1 ise ve modelin tahmini 1'e yaklaştıkça kayıp azalır. Ancak tahmin 0'a yaklaştıkça, kayıp yine hızla artar. 
+
+Örneğin, model bir veriyi yanlışlıkla "0" (örneğin, kanser yok) olarak tahmin ederse, bu da ciddi bir hata olarak değerlendirilir.
+
+Görseldeki grafikler, tahminin doğru olduğu durumda kaybın nasıl sıfıra yaklaştığını ve yanlış tahminlerde kaybın nasıl hızla arttığını görselleştiriyor.
+
+
+
+
