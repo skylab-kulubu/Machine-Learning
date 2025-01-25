@@ -284,10 +284,108 @@ Gradyan inişine hazır algoritmayı tamamlamak için f terimini sigmoid fonksiy
 ![image](https://github.com/user-attachments/assets/d1ec6d02-706c-4859-9c9e-d2ca1aef1d2c)
 
 
+## Uyumun İyiliği
+İstatistikte uyum iyiliği , bir modelin tahmin edilen değerlerinin gözlenen (gerçek) değerlerle ne kadar yakın eşleştiğini ifade eder.
+
+Sinyal yerine gürültüyü öğrenen bir model, eğitim veri setine uyduğu ancak yeni veri setleriyle zayıf uyum sağladığı için "aşırı uyum" olarak kabul edilir.
+![image](https://github.com/user-attachments/assets/eb881f71-8d57-4d3c-a7d4-9c6cd587af1f)
 
 
++ ## Aşırı Uyum ve Yetersiz Uyum
+Aşırı uyumu, tam tersi sorun olan yetersiz uyuma bakarak daha iyi anlayabiliriz.
+
+Yetersiz uyum, bir modelin çok basit olması durumunda ortaya çıkar; çok az özellik ile bilgilendirilmiş veya çok fazla düzenlenmişse, bu da veri kümesinden öğrenmede esnek olmamasına neden olur.
+
+Basit öğrenenler, tahminlerinde daha az varyansa sahip olma eğilimindedirler ancak yanlış sonuçlara doğru daha fazla önyargıya sahiptirler (bkz: Önyargı-Varyans Dengesi ).Öte yandan karmaşık öğrenenler tahminlerinde daha fazla varyansa sahip olma eğilimindedir.
 
 
++ ## Makine öğrenmesinde hem önyargı hem de varyans birer tahmin hatasıdır.
+ Tipik olarak, önyargıdan kaynaklanan hatayı azaltabiliriz ancak bunun sonucunda varyanstan kaynaklanan hatayı artırabiliriz veya tam tersi.
+  
+ Çok basit (yüksek önyargı) ile çok karmaşık (yüksek varyans) arasındaki bu denge, istatistik ve makine öğrenmesinde temel bir kavramdır ve tüm denetlenen öğrenme algoritmalarını etkiler
+ ![image](https://github.com/user-attachments/assets/c693c409-8f8b-44ec-8b11-62e64e200781)
+
++ ## Makine Öğrenmesinde Aşırı Uyum Nasıl Tespit Edilir
++ Aşırı uyumun ve genel olarak makine öğrenmesinin temel zorluklarından biri, modelimizin yeni verilerde ne kadar iyi performans göstereceğini, onu gerçekten test edene kadar bilemememizdir
++ Bunu ele almak için, başlangıç veri setimizi ayrı eğitim ve test alt kümelerine ayırabiliriz .
+  
+![image](https://github.com/user-attachments/assets/86e687b9-086e-4332-868a-bf9ef38ea1c7)
+
+Bu yöntem, modelimizin yeni veriler üzerinde ne kadar iyi performans göstereceğini yaklaşık olarak tahmin etmemizi sağlayabilir.
+ 
+Eğer modelimiz eğitim setinde test setinden çok daha iyi performans gösteriyorsa, o zaman büyük ihtimalle aşırı uyum sağlıyoruz demektir.
+ 
+Örneğin, modelimiz eğitim setinde %99 doğruluk elde ederken test setinde yalnızca %55 doğruluk elde ederse bu büyük bir kırmızı bayrak olur.
+
+## Makine Öğrenmesinde Aşırı Uyum Nasıl Önlenir
+Aşırı uyumu tespit etmek yararlıdır, ancak sorunu çözmez. Neyse ki deneyebileceğiniz birkaç seçeneğiniz var.
+
+Aşırı uyum sorununa yönelik en popüler çözümlerden birkaçı şunlardır:
+
++ ## Çapraz doğrulama
+ Çapraz doğrulama, aşırı uyuma karşı güçlü bir önleyici tedbirdir.
+ 
+Fikir akıllıca: İlk eğitim verilerinizi kullanarak birden fazla mini eğitim-test bölümü oluşturun. Bu bölümleri modelinizi ayarlamak için kullanın.
+
+Standart k katlı çapraz doğrulamada, verileri katlama adı verilen k alt kümeye böleriz. Sonra, kalan katı test kümesi olarak kullanırken (buna "bekleme katı" denir) algoritmayı k-1 kat üzerinde yinelemeli olarak eğitiriz.
+
+![image](https://github.com/user-attachments/assets/a92b4e68-4e89-4599-8425-209ab4a33b7f)
+
+Çapraz doğrulama, hiperparametreleri yalnızca orijinal eğitim setinizle ayarlamanıza olanak tanır. Bu, test setinizi nihai modelinizi seçmek için gerçekten görülmemiş bir veri seti olarak tutmanıza olanak tanır.
+
++ ## Daha fazla veriyle eğitin
+Her zaman işe yaramayacaktır, ancak daha fazla veriyle eğitim, algoritmaların sinyali daha iyi algılamasına yardımcı olabilir. Çocuklarda boy ve yaş modellemesinin daha önceki örneğinde, daha fazla okul örneklemesinin modelinize nasıl yardımcı olacağı açıktır.
+
+Elbette, durum her zaman böyle değildir. Sadece daha gürültülü veriler eklersek, bu teknik işe yaramayacaktır. Bu yüzden verilerinizin her zaman temiz ve alakalı olduğundan emin olmalısınız.
+
++ ## Özellikleri kaldır
+Bazı algoritmaların dahili özellik seçimi vardır.
+
+Bunu yapmayanlar için, alakasız giriş özelliklerini kaldırarak genelleştirilebilirliklerini manuel olarak iyileştirebilirsiniz.
+
+Bunu yapmanın ilginç bir yolu, her bir özelliğin modele nasıl uyduğuna dair bir hikaye anlatmaktır. Bu, veri bilimcisinin yazılım mühendisinin lastik ördek hata ayıklama tekniğine yaptığı yorum gibidir; burada kodlarını satır satır bir lastik ördeğe açıklayarak hata ayıklarlar.
+Herhangi bir şey mantıklı gelmiyorsa veya belirli özellikleri haklı çıkarmak zorsa, bunları tanımlamanın iyi bir yolu budur.
+Ayrıca, iyi bir başlangıç noktası için kullanabileceğiniz birkaç özellik seçimi buluşsal yöntemi vardır.
+
+
++ ## Erken durdurma
+Bir öğrenme algoritmasını yinelemeli olarak eğittiğinizde , modelin her yinelemesinin ne kadar iyi performans gösterdiğini ölçebilirsiniz.
+Belirli bir yineleme sayısına kadar, yeni yinelemeler modeli iyileştirir. Ancak bu noktadan sonra, eğitim verilerine aşırı uyum sağlamaya başladığından modelin genelleme yeteneği zayıflayabilir.
+
+Erken durdurma, öğrencinin o noktayı geçmesinden önce eğitim sürecini durdurmak anlamına gelir.
+
+![image](https://github.com/user-attachments/assets/e38a9b8a-778a-4210-8140-366f7e373df9)
+
+Günümüzde bu teknik daha çok derin öğrenmede kullanılmakta olup klasik makine öğrenmesinde ise diğer teknikler (örneğin düzenleme) tercih edilmektedir.
+
++ ## Düzenleme
+
+Düzenleme, modelinizi yapay olarak daha basit hale getirmek için kullanılan çok çeşitli teknikleri ifade eder.
+
+Yöntem, kullandığınız öğrenen türüne bağlı olacaktır. Örneğin, bir karar ağacını budayabilir, bir sinir ağında bırakmayı kullanabilir veya regresyondaki maliyet fonksiyonuna bir ceza parametresi ekleyebilirsiniz.
+
+Çoğu zaman, düzenleme yöntemi aynı zamanda bir hiperparametredir, yani çapraz doğrulama yoluyla ayarlanabilir.
+
++ ## Bir araya getirme
+Topluluklar, birden fazla ayrı modelden gelen tahminleri birleştirmek için kullanılan makine öğrenme yöntemleridir. Topluluk oluşturma için birkaç farklı yöntem vardır, ancak en yaygın ikisi şunlardır:
+
+Bagging, karmaşık modellerin aşırı uyum sağlama olasılığını azaltmayı amaçlar.
+-Çok sayıda “güçlü” öğrenciyi paralel olarak eğitir.
+-Güçlü öğrenen, nispeten kısıtlanmamış bir modeldir.
+-Bagging daha sonra tahminlerini "düzeltmek" için tüm güçlü öğrencileri bir araya getirir.
+Basit modellerin öngörü esnekliğini artırmaya yönelik girişimleri artırmak;
+-Çok sayıda “zayıf” öğrenciyi sırayla eğitir.
+-Zayıf öğrenen, kısıtlanmış bir modeldir (yani her karar ağacının maksimum derinliğini sınırlayabilirsiniz).
+-Dizideki her bir bölüm, kendinden öncekinin hatalarından ders çıkarmaya odaklanıyor.
+-Daha sonra güçlendirme, tüm zayıf öğrencileri tek bir güçlü öğrencide birleştirir.
+
+Torbalama ve güçlendirme her ikisi de topluluk yöntemleri olmasına rağmen, soruna zıt yönlerden yaklaşırlar.
+
+Bagging karmaşık temel modeller kullanır ve tahminlerini "düzeltmeye" çalışırken, artırma basit temel modeller kullanır ve toplam karmaşıklıklarını "artırmaya" çalışır.
+
+
+## Düzenlileştirme Nedir?
+Düzenlileştirme, makine öğrenmesi ve derin öğrenme modellerinde aşırı öğrenmeyi önlemek için kullanılan bir tekniktir. Modelin karmaşıklığını kontrol altında tutarak, modelin eğitim verisine aşırı uyum sağlamasını ve genelleme yeteneğinin düşmesini engeller. Düzenlileştirme, modelin parametrelerine ceza ekleyerek gerçekleşir ve bu cezalar modelin daha basit ve genelleyici olmasını sağlar.
 
 
 
