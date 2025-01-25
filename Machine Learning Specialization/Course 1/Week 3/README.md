@@ -265,8 +265,24 @@ Bir öğretmen, öğrencilerinin sınav sonuçlarını değerlendirmek için bir
 Cost fonksiyonu, aynen bu öğretmen gibi çalışıyor: Her bir veri noktasındaki hatayı ölçüyor, ortalamasını alıyor ve modeli geliştirmek için bu hataları minimize etmeye çalışıyor.
 
 ## Gradyan inişi
-
 ![image](https://github.com/user-attachments/assets/41f818a9-a703-41d1-9bde-aed06c22a84f)
+
++ ## Gradient descent implementation
+En iyi w ve b’yi bulmak için gradyan iniş algoritmasını kullanıyoruz. Gradyan iniş ve türevleri makine öğrenmesinde yaygın olarak kullanılır.
+![image](https://github.com/user-attachments/assets/e1569a2d-b562-4430-a6e9-3470ee8ef33f)
+
+Gradient Descent algoritması, maliyet fonksiyonundaki minimum değeri bulmak için kullanılan birinci dereceden yinelemeli bir optimizasyondur. Bu yaklaşımda, w (ağırlıkları) rastgele bir değerle başlatır ve gradyanı buluruz. Sonra w’yi gradyanın ters yönünde güncelleriz. Ve bu süreç minimum maliyet bulunana kadar devam eder. Gradyan her zaman en büyük artışın olduğu yönü gösterir, bu yüzden minimum veya iniş noktasını bulmak için ağırlıkları gradyanın ters yönünde güncelleriz. Aynı yaklaşımı b’nin minimumunu bulmak için de uygularız.
+
+Çoklu doğrusal regresyon algoritmasına dayanarak, aşağıda gösterildiği gibi gradyan iniş algoritmasını uygulayabileceğimizi biliyoruz.
+![image](https://github.com/user-attachments/assets/b9ae8443-370b-4d9a-a6db-9ef3add35ac8)
+
+Algoritmanın türevini daha da genişleterek uygulamaya hazır hale getirebiliriz. Bu kavram doğrusal regresyondan alınmıştır.
+![image](https://github.com/user-attachments/assets/db250d73-2ca2-4c0b-9026-c55b52893506)
+![image](https://github.com/user-attachments/assets/81b1166f-f6e6-45e8-aff9-b9295ee60c07)
+
+Gradyan inişine hazır algoritmayı tamamlamak için f terimini sigmoid fonksiyonuyla yeniden yazabiliriz.
+![image](https://github.com/user-attachments/assets/d1ec6d02-706c-4859-9c9e-d2ca1aef1d2c)
+
 
 
 
