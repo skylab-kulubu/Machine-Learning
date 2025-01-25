@@ -207,3 +207,5 @@ Sonuç olarak, lineer regresyon hataları azaltmada daha basit ve doğrudan bir 
 ![Logistic2](https://global.discourse-cdn.com/dlai/original/3X/c/2/c22ec781fe0d6baf52100555824f82d9537b5e0f.jpeg)
 
 
+## Logistic Loss Function
+
