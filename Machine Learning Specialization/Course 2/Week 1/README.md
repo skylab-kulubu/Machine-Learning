@@ -62,4 +62,6 @@ Karar ağaçları, veriyi hiyerarşik olarak bölen ve kolay anlaşılabilir kar
 
 
 # Sinir Ağı Katmanları ve Kompleks Ağlar
+Yapay sinir ağları belirli sayıda nöron içeren katmanlardan oluşurlar. Her bir nöron kendine ait w ve b parametreleri ile lojistik regresyon hesabı yapar ve bu işlemin sonucunda değeri 0 ile 1 arasında değişen bir sayı üretir. Dolayısıyla bir katmanın çıkış değeri, içerdiği nöron sayısına eşit sayıda değer içeren bir vektördür.
 ![Basit Bir Sinir Ağı](https://github.com/user-attachments/assets/31a09b2a-e6ca-4648-9f1e-69d3776f0580)
+Yukarıda verilen resimde 2 katmandan oluşan basit bir sinir ağı görülmektedir. Katmanlar sırasıyla 3 ve 1 adet nöron içermektedirler. Dolayısıyla giriş vektörünün boyutundan bağımsız olarak 1.katmanın çıkışı 3, 2.katmanın çıkışı da 1 adet değerden oluşur. 
