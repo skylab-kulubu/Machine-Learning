@@ -14,6 +14,8 @@ Bu doküman, yapay zeka ve makine öğrenmesinin en güçlü araçlarından olan
 
 **Yapay Sinirler:** Yapay sinir ağları, biyolojik sinirlerin basitleştirilmiş matematiksel modelleri olarak, girdi verilerini işler ve çıktı üretir.
 
+![Yapay Sinir](https://github.com/user-attachments/assets/b2c4cb10-be14-4573-b23b-e7b070223590)
+
 ### Sinir Ağlarının Çalışma Prensibi
 **Katmanlar:** Sinir ağları, girdi, gizli ve çıktı katmanlarından oluşur. Girdi katmanı, veriyi alırken; gizli katmanlar bu veriyi işler ve çıktı katmanı sonucu üretir.
 
