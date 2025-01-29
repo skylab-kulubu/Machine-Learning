@@ -10,6 +10,8 @@ Bu doküman, yapay zeka ve makine öğrenmesinin en güçlü araçlarından olan
 ### Biyolojik İlham: Sinir Ağlarının Kökenleri
 **Biyolojik Sinirler:** İnsan beyninin temel birimi olan nöronlar, elektrik sinyalleri aracılığıyla bilgi işler. Yapay sinir ağları, bu biyolojik sistemin işleyişinden esinlenerek geliştirilmiştir.
 
+![Biyolojik Sinir Hücresi](![image](https://github.com/user-attachments/assets/fc676c4f-b15c-48a3-b974-04f39892caf7))
+
 **Yapay Sinirler:** Yapay sinir ağları, biyolojik sinirlerin basitleştirilmiş matematiksel modelleri olarak, girdi verilerini işler ve çıktı üretir.
 
 ### Sinir Ağlarının Çalışma Prensibi
