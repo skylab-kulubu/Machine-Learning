@@ -53,3 +53,9 @@ Karar ağaçları, veriyi hiyerarşik olarak bölen ve kolay anlaşılabilir kar
 3. **Geniş Uygulama Alanı:** Sınıflandırma, regresyon ve veri madenciliğinde yaygın olarak kullanılır.
 
 ---
+
+
+
+
+# Sinir Ağı Katmanları ve Kompleks Ağlar
+![Basit Bir Sinir Ağı](https://github.com/user-attachments/assets/31a09b2a-e6ca-4648-9f1e-69d3776f0580)
