@@ -58,3 +58,14 @@ Bölme kriteri olarak entropi yerine varyans, bilgi kazanımı yerine varyans az
 ![Image](https://github.com/user-attachments/assets/e1aae02f-ae43-4f08-ba53-4f6b641e8d36) <br/>
 
 ![Image](https://github.com/user-attachments/assets/c36e1bd6-3c7e-406d-94f1-06a8a8496ba9)  <br/>
+
+
+Tree Ensembles
+
+Tek bir karar ağacı kullanmanın iyi olduğu kadar olumsuz yönleri de vardır. Zayıf yönlerinden biri, bu karar ağacının verilerdeki küçük değişikliklere karşı oldukça hassas olmasıdır.
+Eğitim örneğini değiştirirseniz sonuçta değişir. Mesela bu kedi ilk karar ağacına göre kedi kategorisine girememişti çünkü kriterlerden biri olan keskin kulak yapısına uymuyordu ve ilk karar ağacına göre kedi değildi. Ancak eğitim örneğini değiştirip kriterimizi bıyık yaptığımızda kedi kategorisine girdi bu yüzden bahsettiğim gibi birden fazla karar ağacı yani decision tree ensembles ile hata oranını minimize etmeye çalışırız.
+Tek bir eğitim örneğinin değişmesi bile o karar ağacının kökten itibaren bölünmesini değiştireceğinden o ağacı tamamen değiştirir. Böylece biz de ağaç topluluğu ile daha doğru tahminler elde ederiz.
+
+
+![alt text](image.png)
+
