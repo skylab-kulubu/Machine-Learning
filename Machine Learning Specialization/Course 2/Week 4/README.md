@@ -69,3 +69,108 @@ Tek bir eğitim örneğinin değişmesi bile o karar ağacının kökten itibare
 
 ![alt text](image.png)
 
+
+• Burada gördüğümüz 3 decision tree de bir test verisi olan kediyi sınıflandırmanın üç farklı yolunu temsil ediyor.
+
+
+• Burada en doğru tahmini minimum hatayla elde edebilmek için sınıflandırmak istediğim rastgele bir veriyi üç ağaçta da çalıştırırım ve bir sonuca varırım.
+Örneğin birinci karar ağacında kriterlerim bıyığın varlığı ve kulak şekli, ikinci karar ağacında kriterleri kulak şekli yüz şekli ve bıyığın varlığı, üçüncü karar ağacında kriterin yüz şekli ve bıyığın varlığıdır. bu kriterlere göre test verisinin kategorisi tahmin edilir.
+Bir ağaç topluluğu kullanmamızın nedeni çok sayıda test verisi ile minimum hata ile doğru sonuca ulaşmaktır
+
+
+![alt text](image-1.png)
+
+Peki bu ağaç topluluklarını nasıl oluştururuz?
+
+
+Sampling with replacemnet
+
+• Bir ağaç topluluğunu oluşturuken değiştirme ile örnekleme denen bir metod kullanırız.
+
+• Burada bu gördüğmüz jetonları bir çantaya atıp her seferinde birer tane seçersek karşılaşabileceğimiz kombinasyonladan bazıları örneklendirilmilştir.
+
+• Burada bizim veri setimizin bir kutu kedi olduğunu varsayalım. Bu tabloyu da içinden jeton seçtiğimiz bir çanta gibi düşünelim. Böylece tablomuzun her satır ve sütunu kedilerin özelliklerini temsil edecek ve sınıflandırma yaparak bir sonuca varmamızı sağlayacak.
+Buradaki bu tabloyu bir kadife çantaya benzetelim ve sembolik olarak da bu kutunun içindeki kedi köpekleri yani test elimizi birer jeton olarak düşünelim. Nasıl ki bir kadife çantanın içinde bulunan jetonlardan seçtiğim her bir durum bana bir olasılık veriyorsa buradaki kedi ve köpeklere bu sütunda kategorilere ayırarak sınıflandırırım ve her bir satır bana bir olasılık sonucunu verir. Ayrıca değiştirerek rastgele bir veri seti oluşturma sürecinde oldukça benzer veri setleri de oluşturabiliriz tamamen farklı da.
+
+
+![alt text](image-2.png)
+
+
+Generating a tree sample
+
+
+• Orijinal eğitim setine benzeyen ancak aynı zamanda oldukça farklı yeni eğitim setleri oluşturmak için değiştirme yöntemini kullanacağız.
+
+• Buradaki ‘m’ bizim eğitim setimizin boyutunu temsil ederken ‘b’ ise bag anlamına gelen sanal çantayı temsil ediyor.
+
+Buradaki örneğimizde birinci eğitim setimizi birinci karar ağacında işleme sokarsak ikinci veri setimizi elde ederiz ve bu da bizim sonuç tablomuz olur
+Ayrıca ikinci olarak elde ettiğimiz eğitim setinde ise biraz değişiklik yaparak yeni sonuçlar elde ederiz önceki eğitim seti ile biraz benzeyebilir ancak farklıdır dolayısıyla sonuçlar ve ağaçlar da farklıdır.
+
+
+Randomizing the feature choice
+
+• Rastgele orman algoritması, torbalı karar ağaçlarının geliştirilmiş bir versiyonudur. Her düğümde rastgele bir özellik alt kümesi seçerek ağaçları daha çeşitli hale getirir. Bu yöntem, tek bir karar ağacına kıyasla daha sağlamdır ve eğitim verisindeki küçük değişikliklere karşı dayanıklıdır. Özellik seçiminde genellikle √N kuralı kullanılır. Rastgele ormanın ötesinde, artırılmış karar ağaçları gibi daha gelişmiş algoritmalar da bulunmaktadır.
+
+
+Random Forest Algorithm
+• Rastgele orman algoritması, torbalı karar ağaçlarının geliştirilmiş bir versiyonudur. Temel fark, her düğümde rastgele bir alt kümeden özellik seçimi yaparak ağaçları birbirinden daha farklı hale getirmesidir. Böylece, oy birliği ile daha doğru tahminler elde edilir.
+
+• Algoritmanın çalışma mantığı şudur:
+
+• Kök düğümde ve ona yakın düğümlerde her zaman aynı bölünmenin olmaması için, özellik seçiminde rastgelelik uygulanır.
+
+• Bunun için, tüm özellikler arasından seçim yapmak yerine, özelliklerin bir alt kümesi (K) belirlenir ve yalnızca bu kümeden en yüksek bilgi kazancına sahip olan özellik seçilir.
+
+Özellik sayısı (N) büyük olduğunda, genellikle K değeri √N (karekök N) olarak belirlenir. Rastgele orman, eğitim setindeki küçük değişikliklere karşı dayanıklıdır, çünkü birçok farklı karar ağacının sonuçları birleştirilerek daha güvenilir tahminler yapılır.
+
+
+![alt text](image-3.png)
+
+
+Boosted Trees Intuition
+
+• Günümüzde, karar ağacı toplulukları arasında en yaygın kullanılan yöntemlerden biri XGBoost adlı algoritmadır. XGBoost, hızlı çalışması, açık kaynak olması ve ticari uygulamalarda yaygın kullanımıyla bilinir. Ayrıca, birçok makine öğrenimi yarışmasını kazanmada oldukça başarılı olmuştur.
+
+
+![alt text](image-4.png)
+
+
+Python’da XGBoost’u kullanmak için kütüphaneyi içe aktarabilir ve XGBClassifier sınıfını kullanarak bir model oluşturabilirsiniz. Eğer regresyon problemi çözmek isterseniz, XGBRegressor kullanabilirsiniz. Kod yapısı her iki durumda da benzerdir.
+
+Xgboost Popüler olmasının nedeni şunlardır:
+
+ Hız ve Verimlilik; Çünkü açık kaynaklı bir uygulama olan aşırı Gradyan arttırma yöntemiyle çalışır ve çok hızlıdır. 
+
+Aşırı uyumu önleme; varsayılan olarak düzenlileştirme yani regularzation içerir bu da modelin aşırı öğrenmesini yani Overfittingi engeller.
+
+Otomatik bölme kriterleri; karar ağacının ne zaman duracağını belirleyen iyi tanımlanmış bölme kriterlerine sahiptir.
+
+Makine öğrenimi yarışmalarındaki başarıları; 
+Kaggle gibi platformlarda düzenlenen yarışmalarda en başarılı algoritmalardan biridir.
+XGBoost geleneksel karar ağaçlarından farklı olarak veriyi rastgele yeniden örneklemeye ihtiyaç duymaz bunun yerine farklı eğitim örneklerini ağırlıklar atayarak çalışır bu da onu daha verimli hale getirir. XGBoost kullanımı; Python‘da XGBoost kullanmak için kütüphaneyi içe aktarabilir ve XGClassifier sınıfını kullanarak bir model oluşturabilirsiniz eğer regresyon problemi çözmek isterseniz XGRegressor kullanabilirsiniz kod yapısı her iki durumda da benzerdir. Son olarak karar ağaçları ve XGBoost ne zaman tercih edilmesi gerektiğini anlamak önemlidir bazı durumlarda sinir ağları daha iyi performans gösterebilir.
+
+
+Decision Trees and Neural Networks
+
+• Yapılandırılmış verilerde, örneğin konut fiyatı tahmini gibi verilerde iyi çalışır. 
+
+• Eğitim süreci genellikle hızlıdır, bu da hızlı iterasyon ve model geliştirme imkânı tanır.
+
+ • Büyük ağaç toplulukları karmaşık olabilir ve yorumlanması zorlaşabilir. 
+
+• Hesaplama kaynakları sınırlıysa, tek bir karar ağacı daha uygun olabilir, ancak genellikle ağaç toplulukları tercih edilir.
+
+
+
+
+NEURAL NETWORKS
+
+• Yapılandırılmış verilerde, örneğin konut fiyatı tahmini gibi verilerde iyi çalışır
+
+• Birden fazla sinir ağı modelini birbirine bağlamak ve eğitmek, karar ağaçlarından daha kolaydır. 
+
+• Eğitim süreci daha yavaş olabilir. 
+
+• Karar ağaçlarına göre daha fazla hesaplama kaynağı gerektirir.
+
+Kar ağaçları ve ağaç toplulukları genellikle yapılandırılmış verilerde hızlı eğitim ve yorumlana bilirlik sağlar ancak karmaşık veri setlerinde zorlaşabilir ve daha fazla kaynak gerektirir sinir ağları yapılandırılmamış verilerde görüntü ses metin gibi daha iyi çalışır ve transfer öğrenimi ile küçük veri setlerinde bile güçlü performans gösterebilir ancak eğitim süreci daha uzun ve kaynak açısından daha maliyetlidir hangi algoritmanın kullanılacağı verinin türüne ve hesaplama kaynaklarına bağlıdır. Sonuç olarak karar ağaçları genellikle yapılandırılmış veri için hızlı ve yorumlanabilir sonuçlar sağlar ancak sinir ağları daha geniş veri türleri ve transfer öğrenimi kullanarak daha esnektir ve güçlüdür hangi algoritmanın kullanılacağı verinin yapısına ve mevcut kaynaklara bağlıdır.
